@@ -8,7 +8,7 @@ The Software Engineering Quiz is a project designed to help students revise for 
 npm install
 ```
 
-## Build
+## Build
 
 ```sh
 npm run build
