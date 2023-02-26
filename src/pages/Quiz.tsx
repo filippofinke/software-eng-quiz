@@ -85,7 +85,13 @@ export default function Quiz() {
       justifyContent={"space-between"}
       height={"100%"}
     >
-      <Card flex={1} marginBottom={10}>
+      <Card
+        flex={1}
+        marginBottom={10}
+        style={{
+          userSelect: "none",
+        }}
+      >
         <CardHeader>
           <HStack justifyContent={"space-between"} color="gray.500">
             <Text>{state.name}</Text>
