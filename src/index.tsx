@@ -1,4 +1,10 @@
-import { Box, ChakraProvider, ColorModeScript, theme } from "@chakra-ui/react";
+import {
+  Box,
+  ChakraProvider,
+  ColorModeScript,
+  Container,
+  theme,
+} from "@chakra-ui/react";
 import * as React from "react";
 import Div100vh from "react-div-100vh";
 import * as ReactDOM from "react-dom/client";
@@ -23,9 +29,9 @@ root.render(
           flexDirection={"column"}
         >
           <Header />
-          <Box flex={1} p={2}>
+          <Container flex={1} p={2}>
             <Router />
-          </Box>
+          </Container>
           <Footer />
         </Box>
       </Div100vh>
