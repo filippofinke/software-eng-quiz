@@ -202,6 +202,36 @@ const questions = [
       "making sure that a software system complies with requirements and that it actually sastifies users' needs",
     category: "Software Processes",
   },
+  {
+    question: "Change Management is the process that is concerned with...",
+    answer:
+      "all of the activities around proposing, evaluating and implementing changes to a software system",
+    category: "Configuration management",
+  },
+  {
+    question: "Configuration management (CM) is concerned with...",
+    answer:
+      "...the policies, processes, and tools for managing changing software systems",
+    category: "Configuration management",
+  },
+  {
+    question: 'What is a "system release"?',
+    answer:
+      "It is a version of a software system that is distributed to customers",
+    category: "Configuration management",
+  },
+  {
+    question: "System building is the process of...",
+    answer:
+      "creating a complete, executable system by compiling and linking the system components, external libraries, configuration files, and other information",
+    category: "Configuration management",
+  },
+  {
+    question: "Version management is the process of...",
+    answer:
+      "...keeping track of different versions of software components and the systems in which these components are used",
+    category: "Configuration management",
+  },
 ];
 
 export default questions;
