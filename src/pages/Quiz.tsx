@@ -108,7 +108,13 @@ export default function Quiz() {
           justifyContent={"space-between"}
         >
           <Box p={4} borderColor={"gray.100"} borderWidth={1} borderRadius={10}>
-            <Text>{current.question}</Text>
+            <Text
+              style={{
+                whiteSpace: "pre-line",
+              }}
+            >
+              {current.question}
+            </Text>
           </Box>
           {showAnswer && (
             <Fade in={true}>
