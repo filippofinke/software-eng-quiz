@@ -232,6 +232,69 @@ const questions = [
       "...keeping track of different versions of software components and the systems in which these components are used",
     category: "Configuration management",
   },
+  {
+    question:
+      "I want to make sure I have all my team mate's latest changes in my dev branch. What is the GIT command I use?",
+    answer: "git pull",
+    category: "Software Versioning",
+  },
+  {
+    question: "What does the following GIT command do? git clone <URI>",
+    answer:
+      "It creates an identical local copy (clone) of the repository found at the given URL",
+    category: "Software Versioning",
+  },
+  {
+    question:
+      "GIT does not allow multiple developers to work simultaneously at the same software component? True/False? Why?",
+    answer:
+      "False. GIT keeps track of changes and guarantees that they are merged (automatically, if possible, or by signalling conflicts and supporting their manual resolution, otherwise)",
+    category: "Software Versioning",
+  },
+  {
+    question:
+      "In what way a Version Control System distinguishes different versions of the same component?",
+    answer: "By assigning each version a unique ID",
+    category: "Software Versioning",
+  },
+  {
+    question:
+      "I want to send my changes upstream with GIT. What is the command I use?",
+    answer: "git push",
+    category: "Software Versioning",
+  },
+  {
+    question:
+      "From an architectural point of view, a modern Version Control System belongs to one of two types. Which ones?",
+    answer: "Centralized or distributed",
+    category: "Software Versioning",
+  },
+  {
+    question: "What is a branching model to a software development team?",
+    answer:
+      "It is a set of conventions and procedures team members agree on and follow in order to come to a managed software development process",
+    category: "Software Versioning",
+  },
+  {
+    question:
+      "I am implementing a new feature and I want to avoid running the risk of losing my work. What do I do?",
+    answer:
+      "I push my feature branch onto a remote main repository so as to effectively create a shared backup and keep it synced as I make changes",
+    category: "Software Versioning",
+  },
+  {
+    question:
+      'Two software engineers approach the implementation of a feature with GIT in the following different ways.\nWhose approach is best and why?\nDEV1\ngit checkout dev\ngit pull\ngit checkout -b feature-1234\n...\ngit add .\ngit commit -m "done feature 1234"\ngit checkout dev\ngit pull\ngit merge feature-1234\ngit push\nDEV2\ngit checkout dev\ngit pull\n...\ngit add .\ngit commit -m "done feature 1234"\ngit pull\ngit push',
+    answer: "DEV1 conveniently isolates the changes in an separate branch",
+    category: "Software Versioning",
+  },
+  {
+    question:
+      "In what way a Version Control System minimizes the use of storage space?",
+    answer:
+      "By ensuring that duplicate copies of identical files are not maintained",
+    category: "Software Versioning",
+  },
 ];
 
 export default questions;
