@@ -357,6 +357,70 @@ const questions = [
     answer: "It is a phenomenon in which dependencies cannot be resolved",
     category: "Software Dependencies",
   },
+  {
+    question:
+      "With mvn (Maven) what is the phase normally linked to the building of the final distributable artifact?",
+    answer: "package",
+    category: "Software Build",
+  },
+  {
+    question:
+      "What is the difference between a statically linked and a dynamically linked executable object?",
+    answer:
+      "A statically linked executable packages all its dependencies internally. A dynamically linked executable contains external references to its dependencies, which are then loaded at run-time as needed.",
+    category: "Software Build",
+  },
+  {
+    question: "The build process typically involves 3 systems. Which ones?",
+    answer: "Development, build and target systems",
+    category: "Software Build",
+  },
+  {
+    question:
+      "A software system must always be built from a clean environment. True/False? Why?",
+    answer:
+      "True. A clean environment guarantees the build process is not influenced (positively or negatively) by unwanted dependencies",
+    category: "Software Build",
+  },
+  {
+    question:
+      "It is alway advisable to build a software system locally before sending a new version upstream. True/False? Why?",
+    answer:
+      "True. We want to minimize the risk of sharing a non-buildable (broken) system",
+    category: "Software Build",
+  },
+  {
+    question:
+      "With mvn (Maven) what must I configure if I want to distribute my system as an executable .jar file?",
+    answer:
+      "A plugin, that allows to assemble my system with all its dependencies",
+    category: "Software Build",
+  },
+  {
+    question:
+      "What does a waterfall approach to building a software system minimize?",
+    answer:
+      "The number of components to be built, thus minimizing the resources and the time needed",
+    category: "Software Build",
+  },
+  {
+    question:
+      "It is always important to automate the build process of a software system. True/False? Why?",
+    answer:
+      "True. Building is a very complex process. Automation reduces the risk of manual/human errors and guarantees repeatability",
+    category: "Software Build",
+  },
+  {
+    question: "In a C environment, what is an available build tool?",
+    answer: "make",
+    category: "Software Build",
+  },
+  {
+    question:
+      "In mvn (Maven) what section of the configuration file refers to the building of the artifacts?",
+    answer: "The <build> section",
+    category: "Software Build",
+  },
 ];
 
 export default questions;
