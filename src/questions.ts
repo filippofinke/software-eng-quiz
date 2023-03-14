@@ -295,6 +295,68 @@ const questions = [
       "By ensuring that duplicate copies of identical files are not maintained",
     category: "Software Versioning",
   },
+  {
+    question: 'A "Software dependency" is simply defined as...',
+    answer:
+      "Whatever piece of code that is relied upon for a digital service to work properly",
+    category: "Software Dependencies",
+  },
+  {
+    question:
+      "I need a password hashing algorithm. I decide to develop my own. Am I making a good decision? Why?",
+    answer:
+      "No. The problem has already been solved. My implementation can only be worse than those available.",
+    category: "Software Dependencies",
+  },
+  {
+    question:
+      "In developing a software product I want to re-use as much existing code as possible. Indicate at least two reasons why this statement is true or false.",
+    answer:
+      "It is true. Re-using existing code speeds up development and reduces the risks of bugs.",
+    category: "Software Dependencies",
+  },
+  {
+    question:
+      "In a Java context, what is the name of a dependencies management tool?",
+    answer: "Maven",
+    category: "Software Dependencies",
+  },
+  {
+    question: "Software dependencies raise an important issue. What is it?",
+    answer: "Trust",
+    category: "Software Dependencies",
+  },
+  {
+    question:
+      'For the software product I am developing I need a mathematical library. I decide to download one and "vendor" it in my project structure. Is this a good approach?',
+    answer:
+      "Rare cases excluded, this is a bad choice. The use of a dependencies management tool is in general a better choice.",
+    category: "Software Dependencies",
+  },
+  {
+    question:
+      "A software dependencies management tool typically relies on an Internet repository. What risk does this entail and how can it be mitigated?",
+    answer:
+      "The risk is linked to the availability of the repository. We can therefore possibly create our own mirror.",
+    category: "Software Dependencies",
+  },
+  {
+    question:
+      "For a given software product I am developing, I define a dependency without fixing its version number. My dependencies management tool will therefore always download the latest available version. When and why is this a good decision and when is it not?",
+    answer:
+      "It is a good decision only if I can test the dependency systematically (functionality, security, perforcance, ...). Otherwise it is a bad decision.",
+    category: "Software Dependencies",
+  },
+  {
+    question: 'What is a "transitive dependency"?',
+    answer: "A dependency of a dependency",
+    category: "Software Dependencies",
+  },
+  {
+    question: 'What is "dependency hell"?',
+    answer: "It is a phenomenon in which dependencies cannot be resolved",
+    category: "Software Dependencies",
+  },
 ];
 
 export default questions;
