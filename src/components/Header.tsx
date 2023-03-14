@@ -1,4 +1,11 @@
-import { Box, Text, useColorModeValue } from "@chakra-ui/react";
+import { DownloadIcon } from "@chakra-ui/icons";
+import {
+  Box,
+  HStack,
+  IconButton,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 
 export default function Header() {
@@ -17,7 +24,21 @@ export default function Header() {
       <Text fontSize={"md"} fontWeight={"bold"}>
         Software Engineering and Development I
       </Text>
-      <ColorModeSwitcher />
+      <HStack>
+        <IconButton
+          size="md"
+          fontSize="lg"
+          variant="ghost"
+          color="current"
+          marginLeft="2"
+          icon={<DownloadIcon />}
+          aria-label={"Download questions"}
+          onClick={() => {
+            window.location.href = "/questions.pdf";
+          }}
+        />
+        <ColorModeSwitcher />
+      </HStack>
     </Box>
   );
 }
