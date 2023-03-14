@@ -421,6 +421,95 @@ const questions = [
     answer: "The <build> section",
     category: "Software Build",
   },
+  {
+    question:
+      "Look at the two requirements defined below by engineers ENG1 and ENG2. Whose definition is best and why?\nENG1\nThe password reset procedure must be fast and user-friendly.\n\nENG2\nUsers must be able to reset their passwords autonomously.\nThe procedure must be guided and take at most 2 minutes to complete.",
+    answer: "ENG2. She defines a clear and measurable requirement.",
+    category: "Requirements engineering",
+  },
+  {
+    question: "According to I.Sommerville, a requirement is...",
+    answer: "...a statement of a system service or of a system constraint",
+    category: "Requirements engineering",
+  },
+  {
+    question:
+      "Requirements engineering is the process of establishing 3 main aspects about a system. What are they?",
+    answer:
+      "(1)The services a customer requires from the system; (2)The constraints under which it must operate; (3)The constraints under which it must be developed",
+    category: "Requirements engineering",
+  },
+  {
+    question:
+      "Requirements engineering is an iterative and incremental process, that includes 3 main phases. What are they?",
+    answer: "Elicitation, specification and validation",
+    category: "Requirements engineering",
+  },
+  {
+    question: "What is a preliminary feasibility study useful to?",
+    answer:
+      "To establish if the system can be developed with the given resources, time and constraints",
+    category: "Requirements engineering",
+  },
+  {
+    question: "A system stakeholder is...",
+    answer:
+      "Any person or organization who is affected by the system and/or has a legitimate interest in it",
+    category: "Requirements engineering",
+  },
+  {
+    question:
+      "What is a practical way of describing the difference between user requirements and system requirements?",
+    answer:
+      'User requirements describe requirements from the "problem" point of view. System requirements describe them from the "solution" point of view.',
+    category: "Requirements engineering",
+  },
+  {
+    question: "In short, functional requirements are...",
+    answer: "...statements of services the system should provide",
+    category: "Requirements engineering",
+  },
+  {
+    question: "In short, non-functional requirements are...",
+    answer:
+      "constraints under which the system must operate, be developed, standards it must abide to, etc.",
+    category: "Requirements engineering",
+  },
+  {
+    question: "What are two viable approaches to requirements elicitation?",
+    answer: "Interviews (open or closed) and ethnography",
+    category: "Requirements engineering",
+  },
+  {
+    question: "What is the resulting artifact of requirements specification?",
+    answer: "A Software Requirements Specification (SRS) document",
+    category: "Requirements engineering",
+  },
+  {
+    question: "What is requirements validation concerned with?",
+    answer:
+      "With demonstrating that requirements define the system that customers really want",
+    category: "Requirements engineering",
+  },
+  {
+    question:
+      "Requirements validation must check many aspects of the collected requirements. Name at least three of them.",
+    answer:
+      "Validity, consistency, completeness, realism, verifiability, comprehensibility, traceability, adaptability.",
+    category: "Requirements engineering",
+  },
+  {
+    question: "In practical terms, what does a use case describe?",
+    answer:
+      "It describes typical and exceptional ways in which a real-world actor interacts with the system",
+    category: "Requirements engineering",
+  },
+  {
+    question:
+      "What is the typical device to capture requirements in agile models?",
+    answer: "User stories",
+    category: "Requirements engineering",
+  },
 ];
 
 export default questions;
