@@ -510,6 +510,98 @@ const questions = [
     answer: "User stories",
     category: "Requirements engineering",
   },
+  {
+    question:
+      "The internationalization (or i18n) process of a software product has to do with...",
+    answer:
+      "designing and developing it so that it can be adapted to a target audience without engineering changes (supervises localization)",
+    category: "UI design",
+  },
+  {
+    question:
+      "The localization (or l10n) process of a software product has to do with...",
+    answer: "adapting it to a given region (underlies internationalization)",
+    category: "UI design",
+  },
+  {
+    question: "What does the principle of least surprise refer to?",
+    answer:
+      "To the fact that users should in principles be able to anticipate how the software component will behave",
+    category: "UI design",
+  },
+  {
+    question: "What does the principle of familiarity refer to?",
+    answer:
+      "To the fact that the software product should use concepts and terms familiar to the user",
+    category: "UI design",
+  },
+  {
+    question: "What does the principle of consistency refer to?",
+    answer:
+      "To the fact that comparable operations should be activated in comparable ways and that comparable components should have comparable formats",
+    category: "UI design",
+  },
+  {
+    question: "What does the principle of feedback refer to?",
+    answer:
+      "To the fact that the software should maintain a two-way communication with the user and provide visual and auditory feedback",
+    category: "UI design",
+  },
+  {
+    question:
+      'The degree to which a software can be used by specified consumers to achieve quantified objectives with effectiveness, efficiency, and satisfaction in a quantified context of use" is said (1 word)...',
+    answer: "usability",
+    category: "UI design",
+  },
+  {
+    question: "What does the memory load principle refer to?",
+    answer:
+      "To the fact that we must reduce that amount of information that users must remember between actions",
+    category: "UI design",
+  },
+  {
+    question: "What does the principle of efficiency refer to?",
+    answer:
+      "To the fact that we must seek efficiency in dialogue, motion and thought",
+    category: "UI design",
+  },
+  {
+    question: "What does the principle of recoverability refer to?",
+    answer: "To the fact the we must allow users to recover from their errors",
+    category: "UI design",
+  },
+  {
+    question: "What does the principle of user guidance refer to?",
+    answer:
+      "To the fact that we must incorporate some context-sensitve user guidance and assistance",
+    category: "UI design",
+  },
+  {
+    question:
+      "What simple approach can we use for possible cultural issues arising from the design of our product?",
+    answer:
+      "Put users in control and allow them to customize the software product",
+    category: "UI design",
+  },
+  {
+    question:
+      "An ASCII code position is a Unicode code position. True/false? Why?",
+    answer:
+      "True. The first 128 Unicode code positions correspond to those of the ASCII table.",
+    category: "UI design",
+  },
+  {
+    question: "How does usability testing differ from other testing processes?",
+    answer: "Usability tests cannot be automated",
+    category: "UI design",
+  },
+  {
+    question:
+      "Usability testing verifies several attributes of a software product. Name at least 3...",
+    answer:
+      "_learnability_, _efficiency_ (or _speed of operation_), _errors and recoverability_, _flexibility_, _robustness_",
+    category: "UI design",
+  },
 ];
 
 export default questions;
