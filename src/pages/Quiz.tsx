@@ -19,11 +19,13 @@ import {
   HStack,
   IconButton,
   Text,
+  Textarea,
 } from "@chakra-ui/react";
 import { useMemo, useRef, useState } from "react";
 import { useLocation, Link as RouterDomLink } from "react-router-dom";
 import { Question } from "../utils/quiz";
 import { Link } from "@chakra-ui/react";
+import { useSettings } from "../contexts/SettingsContext";
 
 interface State {
   name: string;
@@ -35,12 +37,14 @@ interface Answer extends Question {
 }
 
 export default function Quiz() {
+  const { settings } = useSettings();
   const location = useLocation();
   const state = location.state as State;
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
   const [showAnswer, setShowAnswer] = useState<boolean>(false);
   const [showAlertDialog, setShowAlertDialog] = useState<boolean>(false);
   const [answers, setAnswers] = useState<Answer[]>([]);
+  const [answer, setAnswer] = useState<string>("");
   const cancelRef = useRef<any>();
 
   const rightAnswers = useMemo(
@@ -102,7 +106,9 @@ export default function Quiz() {
           </HStack>
         </CardHeader>
         <CardBody
-          onClick={() => setShowAnswer(true)}
+          onClick={() => {
+            if (!settings.interactiveMode) setShowAnswer(true);
+          }}
           display={"flex"}
           flexDirection={"column"}
           justifyContent={"space-between"}
@@ -131,7 +137,37 @@ export default function Quiz() {
           )}
         </CardBody>
         <CardFooter>
-          {showAnswer && (
+          {settings.interactiveMode && (
+            <HStack flex={1}>
+              <Textarea
+                placeholder="Type your answer here..."
+                value={answer}
+                onChange={(e) => setAnswer(e.target.value)}
+                disabled={showAnswer}
+              />
+              <Button
+                hidden={showAnswer}
+                h={"100%"}
+                onClick={() => {
+                  setShowAnswer(true);
+                }}
+              >
+                Check
+              </Button>
+              <Button
+                hidden={!showAnswer}
+                h={"100%"}
+                onClick={() => {
+                  saveAnswer(answer === current.answer);
+                  setAnswer("");
+                }}
+              >
+                Next
+              </Button>
+            </HStack>
+          )}
+
+          {!settings.interactiveMode && showAnswer && (
             <HStack flex={1} justifyContent={"space-between"}>
               <IconButton
                 size={"lg"}

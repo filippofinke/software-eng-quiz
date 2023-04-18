@@ -1,4 +1,4 @@
-import { DownloadIcon } from "@chakra-ui/icons";
+import { DownloadIcon, EditIcon, ViewIcon } from "@chakra-ui/icons";
 import {
   Box,
   HStack,
@@ -7,8 +7,10 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
+import { useSettings } from "../contexts/SettingsContext";
 
 export default function Header() {
+  const { settings, setSetting } = useSettings();
   const bg = useColorModeValue("gray.100", "gray.700");
 
   return (
@@ -31,8 +33,24 @@ export default function Header() {
           variant="ghost"
           color="current"
           marginLeft="2"
+          icon={settings.interactiveMode ? <EditIcon /> : <ViewIcon />}
+          title="Toggle interactive mode"
+          aria-label={
+            settings.interactiveMode ? "Interactive mode" : "View mode"
+          }
+          onClick={() => {
+            setSetting("interactiveMode", !settings.interactiveMode);
+          }}
+        />
+        <IconButton
+          size="md"
+          fontSize="lg"
+          variant="ghost"
+          color="current"
+          marginLeft="2"
           icon={<DownloadIcon />}
           aria-label={"Download questions"}
+          title="Download questions"
           onClick={() => {
             window.location.href = "/questions.pdf";
           }}

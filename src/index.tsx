@@ -11,6 +11,7 @@ import * as ReactDOM from "react-dom/client";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Router from "./Router";
+import { SettingsProvider } from "./contexts/SettingsContext";
 
 const container = document.getElementById("root");
 if (!container) throw new Error("Failed to find the root element");
@@ -21,20 +22,22 @@ root.render(
     <ColorModeScript />
 
     <ChakraProvider theme={theme}>
-      <Div100vh>
-        <Box
-          height={"100%"}
-          width={"100%"}
-          display={"flex"}
-          flexDirection={"column"}
-        >
-          <Header />
-          <Container flex={1} p={2}>
-            <Router />
-          </Container>
-          <Footer />
-        </Box>
-      </Div100vh>
+      <SettingsProvider>
+        <Div100vh>
+          <Box
+            height={"100%"}
+            width={"100%"}
+            display={"flex"}
+            flexDirection={"column"}
+          >
+            <Header />
+            <Container flex={1} p={2}>
+              <Router />
+            </Container>
+            <Footer />
+          </Box>
+        </Div100vh>
+      </SettingsProvider>
     </ChakraProvider>
   </React.StrictMode>
 );
