@@ -1,5 +1,5 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Box, Link } from "@chakra-ui/react";
+import { Box, Link, Text } from "@chakra-ui/react";
 
 export default function Footer() {
   return (
@@ -11,9 +11,13 @@ export default function Footer() {
         display={"flex"}
         alignItems={"center"}
         color={"gray.500"}
+        justifyContent={"center"}
       >
         Contribute to the project on GitHub <ExternalLinkIcon ml={2} />
       </Link>
+      <Text fontSize={"sm"} color="gray">
+        {process.env.REACT_APP_GIT_COMMIT_HASH || "REACT_APP_GIT_COMMIT_HASH"}
+      </Text>
     </Box>
   );
 }

@@ -31,8 +31,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && cd scripts && npx ts-node createPdf.ts",
+    "start": "REACT_APP_GIT_COMMIT_HASH=$(git rev-parse HEAD) react-scripts start",
+    "build": "REACT_APP_GIT_COMMIT_HASH=$(git rev-parse HEAD) react-scripts build && cd scripts && npx ts-node createPdf.ts",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
