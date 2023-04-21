@@ -26,6 +26,7 @@ import { useLocation, Link as RouterDomLink } from "react-router-dom";
 import { Question } from "../utils/quiz";
 import { Link } from "@chakra-ui/react";
 import { useSettings } from "../contexts/SettingsContext";
+import { emojisplosion } from "emojisplosion";
 
 interface State {
   name: string;
@@ -81,6 +82,12 @@ export default function Quiz() {
 
     nextQuestion();
   };
+
+  if (showAnswer && settings.interactiveMode && answer === current?.answer) {
+    emojisplosion({
+      emojis: ["🎉", "🎊", "🥳"],
+    });
+  }
 
   return current ? (
     <Box
