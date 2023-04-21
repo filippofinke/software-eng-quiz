@@ -144,6 +144,11 @@ export default function Quiz() {
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
                 disabled={showAnswer}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    setShowAnswer(true);
+                  }
+                }}
               />
               <Button
                 hidden={showAnswer}
