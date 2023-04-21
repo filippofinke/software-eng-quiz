@@ -27,6 +27,7 @@ import { Question } from "../utils/quiz";
 import { Link } from "@chakra-ui/react";
 import { useSettings } from "../contexts/SettingsContext";
 import { emojisplosion } from "emojisplosion";
+import stringSimilarity from "string-similarity-js";
 
 interface State {
   name: string;
@@ -140,6 +141,12 @@ export default function Quiz() {
               >
                 <Text>{current.answer}</Text>
               </Box>
+
+              <Text color={"gray"} margin={"auto"} textAlign="center">
+                Your response is{" "}
+                {(stringSimilarity(answer, current.answer) * 100).toFixed(0)}%
+                similar to the correct answer.
+              </Text>
             </Fade>
           )}
         </CardBody>
