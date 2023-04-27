@@ -142,11 +142,13 @@ export default function Quiz() {
                 <Text>{current.answer}</Text>
               </Box>
 
-              <Text color={"gray"} margin={"auto"} textAlign="center">
-                Your response is{" "}
-                {(stringSimilarity(answer, current.answer) * 100).toFixed(0)}%
-                similar to the correct answer.
-              </Text>
+              {settings.interactiveMode && (
+                <Text color={"gray"} margin={"auto"} textAlign="center">
+                  Your response is{" "}
+                  {(stringSimilarity(answer, current.answer) * 100).toFixed(0)}%
+                  similar to the correct answer.
+                </Text>
+              )}
             </Fade>
           )}
         </CardBody>
