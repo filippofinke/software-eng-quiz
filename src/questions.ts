@@ -602,6 +602,141 @@ const questions = [
       "_learnability_, _efficiency_ (or _speed of operation_), _errors and recoverability_, _flexibility_, _robustness_",
     category: "UI design",
   },
+  {
+    question:
+      "In object-orientation, a class should be designed to represent... what?",
+    answer: "what an entity IS",
+    category: "Software Design",
+  },
+  {
+    question:
+      "A sufficient implementation of a software component is one, that...",
+    answer:
+      "...captures the characteristics of its abstraction, that are necessary for a meaningful and efficient interaction",
+    category: "Software Design",
+  },
+  {
+    question:
+      "A complete implementation of a software component is one that...",
+    answer: "...captures ALL the characteristics of its abstraction",
+    category: "Software Design",
+  },
+  {
+    question:
+      "A primitive implementation of a software component is one that...",
+    answer:
+      "...cannot be realized without access to the internal characteristics of its abstraction",
+    category: "Software Design",
+  },
+  {
+    question: "Single Responsibility Principle or SRP. Define briefly.",
+    answer:
+      "The design principle for which software components must be developed in such a way that they respond to a single role's requirements",
+    category: "Software Design",
+  },
+  {
+    question: "Open-Closed Principle or OCP. Define briefly.",
+    answer:
+      "The design principle for which software components must be developed so that their funcionalities may be extended without changing their implementation",
+    category: "Software Design",
+  },
+  {
+    question: "Liskov Substitution Principle or LSP. Define briefly.",
+    answer:
+      "A design principle that refers to subtyping relations for which the nature of these relations is semantic rather than purely sintactic",
+    category: "Software Design",
+  },
+  {
+    question: "Interface Segregation Principle or ISP. Define briefly.",
+    answer:
+      "A design principle for which no components should be forced to depend on methods they do not use, thus suggesting the definition of smaller, more focussed, interfaces",
+    category: "Software Design",
+  },
+  {
+    question: "Dependency Inversion Principle or DIP. Define briefly.",
+    answer:
+      "A design principle for which higher level modules should be independent of the implementations of the lower level modules they use",
+    category: "Software Design",
+  },
+  {
+    question: "Encapsulation. Define briefly.",
+    answer:
+      "A programming language device, that allows the bundling of data and the methods/functions that operate on that data",
+    category: "Software Design",
+  },
+  {
+    question:
+      "Information hiding is that design principle, that aims to hide... what exactly?",
+    answer: "The design decisions that are most likely to change",
+    category: "Software Design",
+  },
+  {
+    question: "Architectural design. Define briefly.",
+    answer:
+      "The process (as a series of decisions) that identifies the main structural components of a system and their relationships",
+    category: "Software Design",
+  },
+  {
+    question:
+      "The measure of the strength of the relationship of the elements in a module is called...",
+    answer: "Cohesion",
+    category: "Software Design",
+  },
+  {
+    question: "Coupling. Define briefly.",
+    answer: "The degree of interdependence between software modules",
+    category: "Software Design",
+  },
+  {
+    question:
+      "A functional approach to system decomposition is indicated in what type of context?",
+    answer: "In a context in which requirements are stable",
+    category: "Software Design",
+  },
+  {
+    question:
+      "An object-oriented approach to system decomposition is indicated in what type of context?",
+    answer: "In a context in which requirements are unstable and/or evolve",
+    category: "Software Design",
+  },
+  {
+    question:
+      "Software is subject to continuous change. For this reason we want to design components, that, when modified, allow to minimize... what exactly?",
+    answer: "The number of changes to related components",
+    category: "Software Design",
+  },
+  {
+    question:
+      "The OSI model is an example of the fundamental design principle called Separation of Concerns (SoC). What type of architecture is used?",
+    answer: "A multi layer architecture",
+    category: "Software Design",
+  },
+  {
+    question:
+      "In object-orientation, inheritance somewhat conflicts with loose coupling. Why?",
+    answer:
+      "Because in a parent-child inheritance structure the changes made to the parent directly and inevitably impact the child, thus contrasting with the ideal of loosely coupled components",
+    category: "Software Design",
+  },
+  {
+    question:
+      '"Program to an interface, rather than to an implementation". Elaborate briefly.',
+    answer:
+      "Software components should be coupled to contracts (i.e., interfaces) rather than to concretions (i.e., implementations), so that the latter can vary and/or can be replaced freely, rendering the design more flexible and easier to evolve",
+    category: "Software Design",
+  },
+  {
+    question: "Polymorphism. Define briefly.",
+    answer:
+      "The provision of a single _interface_ to entities of different _types_",
+    category: "Software Design",
+  },
+  {
+    question:
+      "In object-orientation, an interface should be designed to represent... what?",
+    answer: "what an entity DOES",
+    category: "Software Design",
+  },
 ];
 
 export default questions;
