@@ -737,6 +737,103 @@ const questions = [
     answer: "what an entity DOES",
     category: "Software Design",
   },
+  {
+    question: "What does an activity diagram describe?",
+    answer: "It describes a workflow: either organizational or computational.",
+    category: "Unified Modeling Language (UML)",
+  },
+  {
+    question: "What does a class diagram describe?",
+    answer:
+      "It describes the structure of a system in terms of its classes (with their properties and methods), and the relationships among them.",
+    category: "Unified Modeling Language (UML)",
+  },
+  {
+    question:
+      "UML is a formal, comprehensive and standard modelling language. Why is the _formal_ aspect so important?",
+    answer:
+      "Because the strongly defined meaning of the UML elements avoids misunderstandings.",
+    category: "Unified Modeling Language (UML)",
+  },
+  {
+    question:
+      "UML is a formal, comprehensive and standard modelling language. Why is the _standard_ aspect so important?",
+    answer:
+      "Because its notation system can be used consistently across all application domains.",
+    category: "Unified Modeling Language (UML)",
+  },
+  {
+    question:
+      "UML is a formal, comprehensive and standard modelling language. What is meant by _comprehensive_?",
+    answer:
+      "It means that UML allows to represent all aspects of a system, from all the necessary points of view (i.e., use-case, logical, process, development/implementation, physical/deployment).",
+    category: "Unified Modeling Language (UML)",
+  },
+  {
+    question: "What does a state diagram describe?",
+    answer:
+      "The _states_ a system can be in and the events/actions/behaviours that determine the transation from a state to another.",
+    category: "Unified Modeling Language (UML)",
+  },
+  {
+    question: "What does a sequence diagram describe?",
+    answer:
+      "It describes the (sequence of) messages exchanged by a set of objects for the realization of a given functionality/task.",
+    category: "Unified Modeling Language (UML)",
+  },
+  {
+    question: "What does an use-case diagram describe?",
+    answer: "It describes the users' interactions with the system.",
+    category: "Unified Modeling Language (UML)",
+  },
+  {
+    question:
+      "UML is said to be a 4+1 (views) model. Why is the use-case view represented as a +1 overlay?",
+    answer:
+      "Because all the other views rely on the use-case view to guide them.",
+    category: "Unified Modeling Language (UML)",
+  },
+  {
+    question:
+      "UML diagrams express one of two fundamental aspects of a system. What are they?",
+    answer: "The _structural_ or the _behavioural_ aspect.",
+    category: "Unified Modeling Language (UML)",
+  },
+  {
+    question:
+      "UML is said to be a 4+1 (views) model. In essence, what does the use case view describe?",
+    answer:
+      "It describes the functionalities of the system from the perspective of the outside world. Basically: what the system is supposed to do.",
+    category: "Unified Modeling Language (UML)",
+  },
+  {
+    question:
+      "UML is said to be a 4+1 (views) model. In essence, what does the logical view describe?",
+    answer:
+      "It describes the _abstractions_ of the system's parts. Basically: what the system is made up of and how the parts interact.",
+    category: "Unified Modeling Language (UML)",
+  },
+  {
+    question:
+      "UML is said to be a 4+1 (views) model. In essence, what does the process view describe?",
+    answer:
+      "It describes the processes within the system. Basically: what happens within the system.",
+    category: "Unified Modeling Language (UML)",
+  },
+  {
+    question:
+      "UML is said to be a 4+1 (views) model. In essence, what does the development view describe?",
+    answer:
+      "It describes how the system is organized into modules and components.",
+    category: "Unified Modeling Language (UML)",
+  },
+  {
+    question:
+      "UML is said to be a 4+1 (views) model. In essence, what does the physical view describe?",
+    answer:
+      "It describes how the system (as described in the logical, process, and development views) translates into real-world entities.",
+    category: "Unified Modeling Language (UML)",
+  },
 ];
 
 export default questions;
