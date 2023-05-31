@@ -31,6 +31,10 @@ const quizzes = [
   },
 ];
 
+export const getQuizByCategory = (name: string) => {
+  return quizzes.find((quiz) => quiz.name === name);
+};
+
 export const getCategories = () => {
   return categories;
 };
