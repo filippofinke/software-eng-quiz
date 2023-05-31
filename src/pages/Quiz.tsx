@@ -17,18 +17,20 @@ import {
   Circle,
   Fade,
   HStack,
+  Icon,
   IconButton,
   Text,
   Textarea,
+  VStack,
 } from "@chakra-ui/react";
 import { useMemo, useRef, useState } from "react";
 import { useLocation, Link as RouterDomLink } from "react-router-dom";
-import { Question } from "../utils/quiz";
+import { Question, getQuizByCategory } from "../utils/quiz";
 import { Link } from "@chakra-ui/react";
 import { useSettings } from "../contexts/SettingsContext";
 import { emojisplosion } from "emojisplosion";
 import stringSimilarity from "string-similarity-js";
-
+import { GrPowerReset } from "react-icons/gr";
 interface State {
   name: string;
   questions: Question[];
@@ -89,6 +91,18 @@ export default function Quiz() {
       emojis: ["🎉", "🎊", "🥳"],
     });
   }
+
+  const restart = () => {
+    setCurrentQuestion(0);
+    setShowAnswer(false);
+    setShowAlertDialog(false);
+    setAnswers([]);
+    setAnswer("");
+    const quiz = getQuizByCategory(state.name);
+    if (quiz) {
+      state.questions = quiz.getQuestions();
+    }
+  };
 
   return current ? (
     <Box
@@ -300,14 +314,23 @@ export default function Quiz() {
           </Center>
         </CardBody>
         <CardFooter>
-          <Button
-            as={RouterDomLink}
-            to={"/"}
-            w={"100%"}
-            leftIcon={<ArrowBackIcon />}
-          >
-            Back to the home page
-          </Button>
+          <VStack w={"full"}>
+            <Button
+              onClick={restart}
+              w={"full"}
+              leftIcon={<Icon as={GrPowerReset} />}
+            >
+              Take this quiz again
+            </Button>
+            <Button
+              as={RouterDomLink}
+              to={"/"}
+              w={"full"}
+              leftIcon={<ArrowBackIcon />}
+            >
+              Back to the home page
+            </Button>
+          </VStack>
         </CardFooter>
       </Card>
     </Box>
