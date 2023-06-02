@@ -25,7 +25,7 @@ import {
 } from "@chakra-ui/react";
 import { useMemo, useRef, useState } from "react";
 import { useLocation, Link as RouterDomLink } from "react-router-dom";
-import { Question, getQuizByCategory } from "../utils/quiz";
+import { Question, getQuizByCategory, saveAnswerStatus } from "../utils/quiz";
 import { Link } from "@chakra-ui/react";
 import { useSettings } from "../contexts/SettingsContext";
 import { emojisplosion } from "emojisplosion";
@@ -74,6 +74,8 @@ export default function Quiz() {
 
   const saveAnswer = (correct: boolean) => {
     if (!current) return;
+
+    saveAnswerStatus(current, correct);
 
     setAnswers([
       ...answers,
