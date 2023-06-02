@@ -20,7 +20,7 @@ export default function Home() {
           justifyContent={"space-between"}
         >
           <VStack align={"start"}>
-            <Text fontSize={"md"}>Revise you answers</Text>
+            <Text fontSize={"md"}>Revise your answers</Text>
             <Text fontSize={"sm"} color={"gray.500"} m={"0 !important"}>
               See stats about your answers
             </Text>
