@@ -88,12 +88,6 @@ export default function Quiz() {
     nextQuestion();
   };
 
-  if (showAnswer && settings.interactiveMode && answer === current?.answer) {
-    emojisplosion({
-      emojis: ["🎉", "🎊", "🥳"],
-    });
-  }
-
   const restart = () => {
     setCurrentQuestion(0);
     setShowAnswer(false);
@@ -195,7 +189,16 @@ export default function Quiz() {
                 hidden={!showAnswer}
                 h={"100%"}
                 onClick={() => {
-                  saveAnswer(answer === current.answer);
+                  let similarity = stringSimilarity(answer, current.answer);
+                  if (similarity > 0.7) {
+                    emojisplosion({
+                      emojis: ["🎉", "🎊", "🥳"],
+                    });
+                    saveAnswer(true);
+                  } else {
+                    saveAnswer(false);
+                  }
+
                   setAnswer("");
                 }}
               >
