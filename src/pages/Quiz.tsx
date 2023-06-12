@@ -100,6 +100,20 @@ export default function Quiz() {
     }
   };
 
+  const handleNextButton = () => {
+    let similarity = stringSimilarity(answer, current?.answer || "");
+    if (similarity > 0.7) {
+      emojisplosion({
+        emojis: ["🎉", "🎊", "🥳"],
+      });
+      saveAnswer(true);
+    } else {
+      saveAnswer(false);
+    }
+
+    setAnswer("");
+  };
+
   return current ? (
     <Box
       display={"flex"}
@@ -169,10 +183,13 @@ export default function Quiz() {
                 placeholder="Type your answer here..."
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
-                disabled={showAnswer}
+                readOnly={showAnswer}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
-                    setShowAnswer(true);
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (showAnswer) handleNextButton();
+                    else setShowAnswer(true);
                   }
                 }}
               />
@@ -188,19 +205,7 @@ export default function Quiz() {
               <Button
                 hidden={!showAnswer}
                 h={"100%"}
-                onClick={() => {
-                  let similarity = stringSimilarity(answer, current.answer);
-                  if (similarity > 0.7) {
-                    emojisplosion({
-                      emojis: ["🎉", "🎊", "🥳"],
-                    });
-                    saveAnswer(true);
-                  } else {
-                    saveAnswer(false);
-                  }
-
-                  setAnswer("");
-                }}
+                onClick={handleNextButton}
               >
                 Next
               </Button>
