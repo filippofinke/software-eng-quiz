@@ -19,6 +19,7 @@ import {
   HStack,
   Icon,
   IconButton,
+  Progress,
   Text,
   Textarea,
   VStack,
@@ -128,6 +129,12 @@ export default function Quiz() {
           userSelect: "none",
         }}
       >
+        <Progress
+          value={currentQuestion}
+          max={state.questions.length}
+          colorScheme={"blackAlpha"}
+          size="xs"
+        />
         <CardHeader>
           <HStack justifyContent={"space-between"} color="gray.500">
             <Text>{state.name}</Text>
