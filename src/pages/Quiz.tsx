@@ -24,7 +24,7 @@ import {
   Textarea,
   VStack,
 } from "@chakra-ui/react";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocation, Link as RouterDomLink } from "react-router-dom";
 import { Question, getQuizByCategory, saveAnswerStatus } from "../utils/quiz";
 import { Link } from "@chakra-ui/react";
@@ -106,6 +106,11 @@ export default function Quiz() {
     if (similarity > 0.7) {
       emojisplosion({
         emojis: ["🎉", "🎊", "🥳"],
+        emojiCount: () => Math.random() * 40,
+        position: () => ({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+        }),
       });
       saveAnswer(true);
     } else {
@@ -114,6 +119,15 @@ export default function Quiz() {
 
     setAnswer("");
   };
+
+  useEffect(() => {
+    // catch escape key
+    window.onkeydown = (e) => {
+      if (e.key === "Escape") {
+        setShowAlertDialog(true);
+      }
+    };
+  }, []);
 
   return current ? (
     <Box
