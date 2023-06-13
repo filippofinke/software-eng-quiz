@@ -344,7 +344,7 @@ const questions = [
     question:
       "For a given software product I am developing, I define a dependency without fixing its version number. My dependencies management tool will therefore always download the latest available version. When and why is this a good decision and when is it not?",
     answer:
-      "It is a good decision only if I can test the dependency systematically (functionality, security, perforcance, ...). Otherwise it is a bad decision.",
+      "It is a good decision only if I can test the dependency systematically (functionality, security, performance, ...). Otherwise it is a bad decision.",
     category: "Software Dependencies",
   },
   {
