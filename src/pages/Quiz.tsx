@@ -22,6 +22,7 @@ import {
   Progress,
   Text,
   Textarea,
+  Tooltip,
   VStack,
 } from "@chakra-ui/react";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -222,22 +223,34 @@ export default function Quiz() {
                   }
                 }}
               />
-              <Button
-                hidden={showAnswer}
-                h={"100%"}
-                onClick={() => {
-                  setShowAnswer(true);
-                }}
+              <Tooltip
+                label="Press Enter to check your answer."
+                openDelay={500}
+                hasArrow
               >
-                Check
-              </Button>
-              <Button
-                hidden={!showAnswer}
-                h={"100%"}
-                onClick={handleNextButton}
+                <Button
+                  hidden={showAnswer}
+                  h={"100%"}
+                  onClick={() => {
+                    setShowAnswer(true);
+                  }}
+                >
+                  Check
+                </Button>
+              </Tooltip>
+              <Tooltip
+                label="Press Enter to go to the next question."
+                openDelay={500}
+                hasArrow
               >
-                Next
-              </Button>
+                <Button
+                  hidden={!showAnswer}
+                  h={"100%"}
+                  onClick={handleNextButton}
+                >
+                  Next
+                </Button>
+              </Tooltip>
             </HStack>
           )}
 
@@ -261,14 +274,20 @@ export default function Quiz() {
           )}
         </CardFooter>
       </Card>
-      <Button
-        alignSelf={"flex-start"}
-        variant={"outline"}
-        leftIcon={<ArrowBackIcon />}
-        onClick={() => setShowAlertDialog(true)}
+      <Tooltip
+        label={"You can also press the Escape key to exit the quiz."}
+        openDelay={500}
+        hasArrow
       >
-        Exit Quiz
-      </Button>
+        <Button
+          alignSelf={"flex-start"}
+          variant={"outline"}
+          leftIcon={<ArrowBackIcon />}
+          onClick={() => setShowAlertDialog(true)}
+        >
+          Exit Quiz
+        </Button>
+      </Tooltip>
 
       <AlertDialog
         isOpen={showAlertDialog}
@@ -354,13 +373,19 @@ export default function Quiz() {
         </CardBody>
         <CardFooter>
           <VStack w={"full"}>
-            <Button
-              onClick={restart}
-              w={"full"}
-              leftIcon={<Icon as={GrPowerReset} />}
+            <Tooltip
+              label={"You can also press the R key to restart the quiz."}
+              openDelay={500}
+              hasArrow
             >
-              Take this quiz again
-            </Button>
+              <Button
+                onClick={restart}
+                w={"full"}
+                leftIcon={<Icon as={GrPowerReset} />}
+              >
+                Take this quiz again
+              </Button>
+            </Tooltip>
             <Button
               as={RouterDomLink}
               to={"/"}
