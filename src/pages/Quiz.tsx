@@ -43,7 +43,7 @@ interface Answer extends Question {
 }
 
 export default function Quiz() {
-  const { settings } = useSettings();
+  const { settings, setSetting } = useSettings();
   const location = useLocation();
   const state = location.state as State;
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
@@ -76,6 +76,11 @@ export default function Quiz() {
 
   const saveAnswer = (correct: boolean) => {
     if (!current) return;
+
+    if (correct) {
+      let points = settings.points || 0;
+      setSetting("points", points + 1);
+    }
 
     saveAnswerStatus(current, correct);
 

@@ -6,15 +6,19 @@ import {
   IconButton,
   Text,
   useColorModeValue,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 import { useSettings } from "../contexts/SettingsContext";
+import Rank from "./Rank";
 
 export default function Header() {
   const [timer, setTimer] = useState("00:00:00");
   const { settings, setSetting } = useSettings();
   const bg = useColorModeValue("gray.100", "gray.700");
+
+  const [isDesktop] = useMediaQuery("(min-width: 600px)");
 
   useEffect(() => {
     // Create a timer of time elapsed since the start of the class
@@ -49,15 +53,20 @@ export default function Header() {
         Software Engineering and Development I
       </Text>
       <HStack>
-        <Badge
-          variant={"solid"}
-          colorScheme={"gray"}
-          title={"You are studying for" + timer}
-        >
-          <Text fontSize={"sm"} fontWeight={"bold"}>
-            {timer}
-          </Text>
-        </Badge>
+        {isDesktop && (
+          <>
+            <Badge
+              variant={"solid"}
+              colorScheme={"gray"}
+              title={"You are studying for" + timer}
+            >
+              <Text fontSize={"sm"} fontWeight={"bold"}>
+                {timer}
+              </Text>
+            </Badge>
+            <Rank points={settings.points} />
+          </>
+        )}
         <IconButton
           size="md"
           fontSize="lg"
@@ -73,6 +82,7 @@ export default function Header() {
             setSetting("interactiveMode", !settings.interactiveMode);
           }}
         />
+
         <IconButton
           size="md"
           fontSize="lg"

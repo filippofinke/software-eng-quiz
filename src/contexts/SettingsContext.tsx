@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 interface Settings {
   interactiveMode: boolean;
+  points: number;
 }
 
 interface Context {
@@ -23,6 +24,7 @@ function useSettings() {
 function SettingsProvider({ children }: any) {
   let [settings, setSettings] = useState<Settings>({
     interactiveMode: false,
+    points: 0,
   });
 
   const setSetting = (key: keyof Settings, value: any) => {
