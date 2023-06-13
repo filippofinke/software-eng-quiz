@@ -132,7 +132,6 @@ export default function Quiz() {
       if (e.key === "Escape") {
         setShowAlertDialog(true);
       } else if (e.key === "r") {
-        console.log(e, current);
         if (!current) restart();
       }
     };

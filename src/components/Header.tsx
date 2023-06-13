@@ -64,7 +64,7 @@ export default function Header() {
                 {timer}
               </Text>
             </Badge>
-            <Rank points={settings.points} />
+            <Rank points={settings.points || 0} />
           </>
         )}
         <IconButton
