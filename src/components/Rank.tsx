@@ -26,6 +26,31 @@ const levels = [
     points: 140,
     color: "orange",
   },
+  {
+    name: "Master",
+    points: 170,
+    color: "red",
+  },
+  {
+    name: "Grandmaster",
+    points: 200,
+    color: "yellow",
+  },
+  {
+    name: "God",
+    points: 250,
+    color: "green",
+  },
+  {
+    name: "Corti",
+    points: 300,
+    color: "pink",
+  },
+  {
+    name: "Sommerville",
+    points: 500,
+    color: "teal",
+  },
 ];
 
 export default function Rank({ points }: { points: number }) {
