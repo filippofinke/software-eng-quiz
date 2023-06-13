@@ -125,9 +125,17 @@ export default function Quiz() {
     window.onkeydown = (e) => {
       if (e.key === "Escape") {
         setShowAlertDialog(true);
+      } else if (e.key === "r") {
+        console.log(e, current);
+        if (!current) restart();
       }
     };
-  }, []);
+
+    return () => {
+      window.onkeydown = null;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [current]);
 
   return current ? (
     <Box
