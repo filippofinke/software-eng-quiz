@@ -111,8 +111,8 @@ export default function Quiz() {
     let similarity = stringSimilarity(answer, current?.answer || "");
     if (similarity > 0.7) {
       emojisplosion({
-        emojis: ["🎉", "🎊", "🥳"],
-        emojiCount: () => Math.random() * 40,
+        emojis: ["🎉", "🎊", "🥳", "✅", "👏"],
+        emojiCount: () => Math.random() * 50,
         position: () => ({
           x: Math.random() * window.innerWidth,
           y: Math.random() * window.innerHeight,
