@@ -56,10 +56,14 @@ function SettingsProvider({ children }: any) {
 
     auth.onAuthStateChanged((user) => {
       if (user) {
+        console.log("[firebase] Loading settings");
         const settingsRef = doc(firestore, "users", user.uid);
         getDoc(settingsRef).then((doc) => {
           if (doc.exists()) {
+            console.log("[firebase] Settings loaded");
             setSettings(doc.data() as any);
+          } else {
+            console.log("[firebase] Settings not found");
           }
         });
       }
@@ -70,9 +74,12 @@ function SettingsProvider({ children }: any) {
     // update firestore if user is logged in
     if (auth.currentUser) {
       const settingsRef = doc(firestore, "users", auth.currentUser.uid);
+      console.log("[firebase] Updating settings");
       setDoc(settingsRef, {
         ...settings,
         displayName: auth.currentUser.displayName,
+      }).then(() => {
+        console.log("[firebase] Settings updated");
       });
     }
   }, [settings]);

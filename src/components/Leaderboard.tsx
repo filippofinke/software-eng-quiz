@@ -17,6 +17,7 @@ export default function Leaderboard() {
   const loadLeaderboard = async () => {
     if (lastUpdated && Date.now() - lastUpdated < 10000) return;
 
+    console.log("[firebase] Loading leaderboard");
     const q = query(
       collection(firestore, "users"),
       orderBy("points", "desc"),
