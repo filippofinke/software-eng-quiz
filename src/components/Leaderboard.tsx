@@ -4,6 +4,7 @@ import { useState } from "react";
 import { GrTrophy } from "react-icons/gr";
 import { firestore } from "../utils/firebase";
 import Rank from "./Rank";
+let lastUpdated: number | null = null;
 
 export default function Leaderboard() {
   let [leaderboard, setLeaderboard] = useState<
@@ -14,6 +15,8 @@ export default function Leaderboard() {
   >([]);
 
   const loadLeaderboard = async () => {
+    if (lastUpdated && Date.now() - lastUpdated < 10000) return;
+
     const q = query(
       collection(firestore, "users"),
       orderBy("points", "desc"),
@@ -31,6 +34,8 @@ export default function Leaderboard() {
       });
       setLeaderboard(leaderboard);
     });
+
+    lastUpdated = Date.now();
   };
 
   return (
@@ -55,9 +60,7 @@ export default function Leaderboard() {
         </Box>
       }
       hasArrow
-      onAnimationStart={() => {
-        loadLeaderboard();
-      }}
+      onOpen={loadLeaderboard}
     >
       <IconButton
         variant="ghost"
