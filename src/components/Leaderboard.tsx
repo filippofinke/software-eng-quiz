@@ -1,6 +1,6 @@
 import { Box, IconButton, Tooltip, Text, HStack } from "@chakra-ui/react";
 import { collection, getDocs, limit, orderBy, query } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { GrTrophy } from "react-icons/gr";
 import { firestore } from "../utils/firebase";
 import Rank from "./Rank";
@@ -13,7 +13,7 @@ export default function Leaderboard() {
     }[]
   >([]);
 
-  useEffect(() => {
+  const loadLeaderboard = async () => {
     const q = query(
       collection(firestore, "users"),
       orderBy("points", "desc"),
@@ -31,7 +31,7 @@ export default function Leaderboard() {
       });
       setLeaderboard(leaderboard);
     });
-  }, []);
+  };
 
   return (
     <Tooltip
@@ -55,6 +55,9 @@ export default function Leaderboard() {
         </Box>
       }
       hasArrow
+      onAnimationStart={() => {
+        loadLeaderboard();
+      }}
     >
       <IconButton
         variant="ghost"
