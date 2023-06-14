@@ -24,6 +24,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "emojisplosion": "^2.6.1",
+    "firebase": "^9.22.2",
     "framer-motion": "^6.5.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
