@@ -77,7 +77,7 @@ export default function Quiz() {
   const saveAnswer = (correct: boolean) => {
     if (!current) return;
 
-    if (correct) {
+    if (correct && settings.interactiveMode) {
       let points = settings.points || 0;
       setSetting("points", points + 1);
     }
