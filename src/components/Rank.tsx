@@ -1,8 +1,4 @@
-import { Badge, Button, Text, Tooltip } from "@chakra-ui/react";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { useEffect, useState } from "react";
-import { GrLogin } from "react-icons/gr";
-import { auth } from "../utils/firebase";
+import { Badge, Text, Tooltip } from "@chakra-ui/react";
 
 const levels = [
   {
@@ -58,17 +54,6 @@ const levels = [
 ];
 
 export default function Rank({ points }: { points: number }) {
-  let [user, setUser] = useState<any>(auth.currentUser);
-  useEffect(() => {
-    auth.onAuthStateChanged((u) => {
-      if (u) setUser(u);
-    });
-  }, []);
-
-  const handleLogin = () => {
-    signInWithPopup(auth, new GoogleAuthProvider());
-  };
-
   let label = `You have ${points} point`;
   if (points !== 1) {
     label += "s";
@@ -81,7 +66,7 @@ export default function Rank({ points }: { points: number }) {
     label += ` (${points}/${nextLevel.points})`;
   }
 
-  return user ? (
+  return (
     <Tooltip label={label}>
       <Badge variant={"solid"} colorScheme={level?.color ?? "gray"}>
         <Text fontSize={"sm"} fontWeight={"bold"}>
@@ -89,16 +74,5 @@ export default function Rank({ points }: { points: number }) {
         </Text>
       </Badge>
     </Tooltip>
-  ) : (
-    <Button
-      leftIcon={<GrLogin />}
-      variant={"solid"}
-      colorScheme={"gray"}
-      onClick={handleLogin}
-    >
-      <Text fontSize={"sm"} fontWeight={"bold"}>
-        Login
-      </Text>
-    </Button>
   );
 }

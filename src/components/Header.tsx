@@ -2,18 +2,34 @@ import { DownloadIcon, EditIcon, ViewIcon } from "@chakra-ui/icons";
 import {
   Badge,
   Box,
+  Button,
   HStack,
   IconButton,
   Text,
   useColorModeValue,
   useMediaQuery,
 } from "@chakra-ui/react";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { GrLogin } from "react-icons/gr";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 import { useSettings } from "../contexts/SettingsContext";
+import { auth } from "../utils/firebase";
+import Leaderboard from "./Leaderboard";
 import Rank from "./Rank";
 
 export default function Header() {
+  let [user, setUser] = useState<any>(auth.currentUser);
+  useEffect(() => {
+    auth.onAuthStateChanged((u) => {
+      if (u) setUser(u);
+    });
+  }, []);
+
+  const handleLogin = () => {
+    signInWithPopup(auth, new GoogleAuthProvider());
+  };
+
   const [timer, setTimer] = useState("00:00:00");
   const { settings, setSetting } = useSettings();
   const bg = useColorModeValue("gray.100", "gray.700");
@@ -64,7 +80,21 @@ export default function Header() {
                 {timer}
               </Text>
             </Badge>
-            <Rank points={settings.points || 0} />
+            {user ? (
+              <Rank points={settings.points || 0} />
+            ) : (
+              <Button
+                leftIcon={<GrLogin />}
+                variant={"solid"}
+                colorScheme={"gray"}
+                onClick={handleLogin}
+              >
+                <Text fontSize={"sm"} fontWeight={"bold"}>
+                  Login
+                </Text>
+              </Button>
+            )}
+            <Leaderboard />
           </>
         )}
         <IconButton

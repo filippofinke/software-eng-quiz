@@ -6,6 +6,7 @@ import { auth, firestore } from "../utils/firebase";
 interface Settings {
   interactiveMode: boolean;
   points: number;
+  displayName?: string;
 }
 
 interface Context {
@@ -29,6 +30,7 @@ function SettingsProvider({ children }: any) {
   let [settings, setLocalSettings] = useState<Settings>({
     interactiveMode: false,
     points: 0,
+    displayName: "",
   });
 
   const setSetting = (key: keyof Settings, value: any) => {
@@ -57,7 +59,6 @@ function SettingsProvider({ children }: any) {
         const settingsRef = doc(firestore, "users", user.uid);
         getDoc(settingsRef).then((doc) => {
           if (doc.exists()) {
-            console.log("Document data:", doc.data());
             setSettings(doc.data() as any);
           }
         });
@@ -69,8 +70,9 @@ function SettingsProvider({ children }: any) {
     // update firestore if user is logged in
     if (auth.currentUser) {
       const settingsRef = doc(firestore, "users", auth.currentUser.uid);
-      setDoc(settingsRef, settings).then(() => {
-        console.log("settings updated");
+      setDoc(settingsRef, {
+        ...settings,
+        displayName: auth.currentUser.displayName,
       });
     }
   }, [settings]);
