@@ -33,6 +33,7 @@ import { useSettings } from "../contexts/SettingsContext";
 import { emojisplosion } from "emojisplosion";
 import stringSimilarity from "string-similarity-js";
 import { GrPowerReset } from "react-icons/gr";
+import toast, { Toaster } from "react-hot-toast";
 interface State {
   name: string;
   questions: Question[];
@@ -51,6 +52,8 @@ export default function Quiz() {
   const [showAlertDialog, setShowAlertDialog] = useState<boolean>(false);
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [answer, setAnswer] = useState<string>("");
+  const [currentStreak, setCurrentStreak] = useState<number>(0);
+
   const cancelRef = useRef<any>();
 
   const rightAnswers = useMemo(
@@ -80,6 +83,12 @@ export default function Quiz() {
     if (correct && settings.interactiveMode) {
       let points = settings.points || 0;
       setSetting("points", points + 1);
+    }
+
+    if (correct) {
+      setCurrentStreak((streak) => streak + 1);
+    } else {
+      setCurrentStreak(0);
     }
 
     saveAnswerStatus(current, correct);
@@ -142,6 +151,44 @@ export default function Quiz() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [current]);
 
+  useEffect(() => {
+    if (currentStreak === 3)
+      toast("You are on fire! Streak of 3!", {
+        icon: "🔥",
+        duration: 1250,
+        position: "bottom-center",
+      });
+    else if (currentStreak === 5)
+      toast("You are on a roll! Streak of 5!", {
+        icon: "🤩",
+        duration: 1250,
+        position: "bottom-center",
+      });
+    else if (currentStreak === 10)
+      toast("You are unstoppable! Streak of 10!", {
+        icon: "🤯",
+        position: "bottom-center",
+        duration: 1250,
+      });
+    else if (currentStreak === 15)
+      toast("You are a legend! Streak of 15!", {
+        icon: "👑",
+        duration: 1250,
+        position: "bottom-center",
+      });
+
+    if ([3, 5, 10, 15].includes(currentStreak)) {
+      emojisplosion({
+        emojis: ["🎉", "🎊", "🥳", "✅", "👏"],
+        emojiCount: () => Math.random() * 150,
+        position: () => ({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+        }),
+      });
+    }
+  }, [currentStreak]);
+
   return current ? (
     <Box
       display={"flex"}
@@ -149,6 +196,7 @@ export default function Quiz() {
       justifyContent={"space-between"}
       height={"100%"}
     >
+      <Toaster />
       <Card
         flex={1}
         marginBottom={10}
@@ -166,7 +214,12 @@ export default function Quiz() {
           <HStack justifyContent={"space-between"} color="gray.500">
             <Text>{state.name}</Text>
             <Text></Text>
-            <Badge p={1} rounded={"md"}>
+            <Badge
+              p={1}
+              rounded={"md"}
+              colorScheme={currentStreak >= 3 ? "orange" : "gray"}
+            >
+              {currentStreak >= 3 ? "🔥 " : ""}
               {currentQuestion + 1} / {state.questions.length}
             </Badge>
           </HStack>
