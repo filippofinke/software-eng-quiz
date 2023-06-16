@@ -40,7 +40,7 @@ categories.forEach((category, index) => {
   questions
     .filter((q) => q.category === category)
     .forEach((q) => {
-      doc.font("Times-Italic");
+      doc.font("Times-Bold");
       doc.fontSize(13).text(q.question, {});
       doc.font("Times-Roman");
       doc.fontSize(12).text(q.answer, {});
