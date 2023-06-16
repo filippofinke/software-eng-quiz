@@ -599,7 +599,7 @@ const questions = [
     question:
       "Usability testing verifies several attributes of a software product. Name at least 3...",
     answer:
-      "_learnability_, _efficiency_ (or _speed of operation_), _errors and recoverability_, _flexibility_, _robustness_",
+      "learnability, efficiency (or speed of operation), errors and recoverability, flexibility, robustness",
     category: "UI design",
   },
   {
@@ -728,7 +728,7 @@ const questions = [
   {
     question: "Polymorphism. Define briefly.",
     answer:
-      "The provision of a single _interface_ to entities of different _types_",
+      "The provision of a single interface to entities of different types",
     category: "Software Design",
   },
   {
@@ -750,21 +750,21 @@ const questions = [
   },
   {
     question:
-      "UML is a formal, comprehensive and standard modelling language. Why is the _formal_ aspect so important?",
+      "UML is a formal, comprehensive and standard modelling language. Why is the formal aspect so important?",
     answer:
       "Because the strongly defined meaning of the UML elements avoids misunderstandings.",
     category: "Unified Modeling Language (UML)",
   },
   {
     question:
-      "UML is a formal, comprehensive and standard modelling language. Why is the _standard_ aspect so important?",
+      "UML is a formal, comprehensive and standard modelling language. Why is the standard aspect so important?",
     answer:
       "Because its notation system can be used consistently across all application domains.",
     category: "Unified Modeling Language (UML)",
   },
   {
     question:
-      "UML is a formal, comprehensive and standard modelling language. What is meant by _comprehensive_?",
+      "UML is a formal, comprehensive and standard modelling language. What is meant by comprehensive?",
     answer:
       "It means that UML allows to represent all aspects of a system, from all the necessary points of view (i.e., use-case, logical, process, development/implementation, physical/deployment).",
     category: "Unified Modeling Language (UML)",
@@ -772,7 +772,7 @@ const questions = [
   {
     question: "What does a state diagram describe?",
     answer:
-      "The _states_ a system can be in and the events/actions/behaviours that determine the transation from a state to another.",
+      "The states a system can be in and the events/actions/behaviours that determine the transation from a state to another.",
     category: "Unified Modeling Language (UML)",
   },
   {
@@ -796,7 +796,7 @@ const questions = [
   {
     question:
       "UML diagrams express one of two fundamental aspects of a system. What are they?",
-    answer: "The _structural_ or the _behavioural_ aspect.",
+    answer: "The structural or the behavioural aspect.",
     category: "Unified Modeling Language (UML)",
   },
   {
@@ -810,7 +810,7 @@ const questions = [
     question:
       "UML is said to be a 4+1 (views) model. In essence, what does the logical view describe?",
     answer:
-      "It describes the _abstractions_ of the system's parts. Basically: what the system is made up of and how the parts interact.",
+      "It describes the abstractions of the system's parts. Basically: what the system is made up of and how the parts interact.",
     category: "Unified Modeling Language (UML)",
   },
   {
