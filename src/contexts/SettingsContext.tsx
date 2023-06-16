@@ -78,11 +78,13 @@ function SettingsProvider({ children }: any) {
       setDoc(settingsRef, {
         ...settings,
         displayName: auth.currentUser.displayName,
+        lastUpdated: new Date(),
       }).then(() => {
         console.log("[firebase] Settings updated");
       });
     }
   }, [settings]);
+
   return (
     <SettingsContext.Provider
       value={{
