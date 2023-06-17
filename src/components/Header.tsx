@@ -96,21 +96,29 @@ export default function Header() {
             <Leaderboard />
           </>
         )}
-        <IconButton
-          size="md"
-          fontSize="lg"
-          variant="ghost"
-          color="current"
-          marginLeft="2"
-          icon={settings.interactiveMode ? <EditIcon /> : <ViewIcon />}
-          title="Toggle interactive mode"
-          aria-label={
-            settings.interactiveMode ? "Interactive mode" : "View mode"
+        <Tooltip
+          label={
+            settings.interactiveMode
+              ? "Interactive mode"
+              : "View mode (no editing)"
           }
-          onClick={() => {
-            setSetting("interactiveMode", !settings.interactiveMode);
-          }}
-        />
+        >
+          <IconButton
+            size="md"
+            fontSize="lg"
+            variant="ghost"
+            color="current"
+            marginLeft="2"
+            icon={settings.interactiveMode ? <EditIcon /> : <ViewIcon />}
+            title="Toggle interactive mode"
+            aria-label={
+              settings.interactiveMode ? "Interactive mode" : "View mode"
+            }
+            onClick={() => {
+              setSetting("interactiveMode", !settings.interactiveMode);
+            }}
+          />
+        </Tooltip>
 
         <IconButton
           size="md"
