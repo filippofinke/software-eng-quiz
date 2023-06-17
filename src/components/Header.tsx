@@ -10,7 +10,7 @@ import {
   useColorModeValue,
   useMediaQuery,
 } from "@chakra-ui/react";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { GrLogin } from "react-icons/gr";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
@@ -20,7 +20,7 @@ import Leaderboard from "./Leaderboard";
 import Rank from "./Rank";
 
 export default function Header() {
-  let [user, setUser] = useState<any>(auth.currentUser);
+  let [user, setUser] = useState<User | null>(auth.currentUser);
   useEffect(() => {
     auth.onAuthStateChanged((u) => {
       if (u) setUser(u);
