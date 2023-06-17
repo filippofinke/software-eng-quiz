@@ -120,19 +120,21 @@ export default function Header() {
           />
         </Tooltip>
 
-        <IconButton
-          size="md"
-          fontSize="lg"
-          variant="ghost"
-          color="current"
-          marginLeft="2"
-          icon={<DownloadIcon />}
-          aria-label={"Download questions"}
-          title="Download questions"
-          onClick={() => {
-            window.location.href = "/questions.pdf";
-          }}
-        />
+        <Tooltip label={"Download questions as a PDF."}>
+          <IconButton
+            size="md"
+            fontSize="lg"
+            variant="ghost"
+            color="current"
+            marginLeft="2"
+            icon={<DownloadIcon />}
+            aria-label={"Download questions"}
+            title="Download questions"
+            onClick={() => {
+              window.location.href = "/questions.pdf";
+            }}
+          />
+        </Tooltip>
         <ColorModeSwitcher />
       </HStack>
     </Box>
