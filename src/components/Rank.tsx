@@ -48,8 +48,23 @@ const levels = [
   },
   {
     name: "Sommerville",
-    points: 500,
+    points: 350,
     color: "teal",
+  },
+  {
+    name: "Fowler",
+    points: 400,
+    color: "twitter",
+  },
+  {
+    name: "Turing",
+    points: 1000,
+    color: "messenger",
+  },
+  {
+    name: "Impedovo",
+    color: "telegram",
+    points: 1000,
   },
 ];
 
