@@ -172,7 +172,7 @@ export default function Quiz() {
     if ([3, 5, 10, 15].includes(currentStreak)) {
       emojisplosion({
         emojis: ["🎉", "🎊", "🥳", "✅", "👏"],
-        emojiCount: () => Math.random() * 150,
+        emojiCount: () => Math.random() * 30,
         position: () => ({
           x: Math.random() * window.innerWidth,
           y: Math.random() * window.innerHeight,
