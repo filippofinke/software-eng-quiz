@@ -119,14 +119,6 @@ export default function Quiz() {
   const handleNextButton = () => {
     let similarity = stringSimilarity(answer, current?.answer || "");
     if (similarity > 0.7) {
-      emojisplosion({
-        emojis: ["🎉", "🎊", "🥳", "✅", "👏"],
-        emojiCount: () => Math.random() * 50,
-        position: () => ({
-          x: Math.random() * window.innerWidth,
-          y: Math.random() * window.innerHeight,
-        }),
-      });
       saveAnswer(true);
     } else {
       saveAnswer(false);
