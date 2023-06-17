@@ -131,7 +131,7 @@ export default function Header() {
             aria-label={"Download questions"}
             title="Download questions"
             onClick={() => {
-              window.location.href = "/questions.pdf";
+              window.open("/questions.pdf", "_blank");
             }}
           />
         </Tooltip>
