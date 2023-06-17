@@ -6,6 +6,7 @@ import {
   HStack,
   IconButton,
   Text,
+  Tooltip,
   useColorModeValue,
   useMediaQuery,
 } from "@chakra-ui/react";
@@ -71,15 +72,13 @@ export default function Header() {
       <HStack>
         {isDesktop && (
           <>
-            <Badge
-              variant={"solid"}
-              colorScheme={"gray"}
-              title={"You are studying for" + timer}
-            >
-              <Text fontSize={"sm"} fontWeight={"bold"}>
-                {timer}
-              </Text>
-            </Badge>
+            <Tooltip label={`You have been studying for ${timer}.`}>
+              <Badge variant={"solid"} colorScheme={"gray"}>
+                <Text fontSize={"sm"} fontWeight={"bold"}>
+                  {timer}
+                </Text>
+              </Badge>
+            </Tooltip>
             {user ? (
               <Rank points={settings.points || 0} />
             ) : (
