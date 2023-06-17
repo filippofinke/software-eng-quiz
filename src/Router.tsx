@@ -9,7 +9,6 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
   ModalCloseButton,
   ModalBody,
   ModalFooter,
@@ -47,7 +46,6 @@ export default function Router() {
         >
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>New release {release.name}!</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
               <ReactMarkdown
