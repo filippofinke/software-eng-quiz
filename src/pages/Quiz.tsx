@@ -148,25 +148,25 @@ export default function Quiz() {
       toast("You are on fire! Streak of 3!", {
         icon: "🔥",
         duration: 1250,
-        position: "bottom-center",
+        position: "top-center",
       });
     else if (currentStreak === 5)
       toast("You are on a roll! Streak of 5!", {
         icon: "🤩",
         duration: 1250,
-        position: "bottom-center",
+        position: "top-center",
       });
     else if (currentStreak === 10)
       toast("You are unstoppable! Streak of 10!", {
         icon: "🤯",
-        position: "bottom-center",
+        position: "top-center",
         duration: 1250,
       });
     else if (currentStreak === 15)
       toast("You are a legend! Streak of 15!", {
         icon: "👑",
         duration: 1250,
-        position: "bottom-center",
+        position: "top-center",
       });
 
     if ([3, 5, 10, 15].includes(currentStreak)) {
