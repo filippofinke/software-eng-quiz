@@ -105,6 +105,7 @@ export default function Quiz() {
   };
 
   const restart = () => {
+    setCurrentStreak(0);
     setCurrentQuestion(0);
     setShowAnswer(false);
     setShowAlertDialog(false);
