@@ -64,7 +64,12 @@ const levels = [
   {
     name: "Impedovo",
     color: "telegram",
-    points: 1000,
+    points: 1300,
+  },
+  {
+    name: "Tommy",
+    color: "linkedin",
+    points: 1300,
   },
 ];
 
