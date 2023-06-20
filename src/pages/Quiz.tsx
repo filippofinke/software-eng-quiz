@@ -207,14 +207,20 @@ export default function Quiz() {
           <HStack justifyContent={"space-between"} color="gray.500">
             <Text>{state.name}</Text>
             <Text></Text>
-            <Badge
-              p={1}
-              rounded={"md"}
-              colorScheme={currentStreak >= 3 ? "orange" : "gray"}
+            <Tooltip
+              label={`You got ${rightAnswers} answer${
+                rightAnswers > 1 ? "s" : ""
+              } right.`}
             >
-              {currentStreak >= 3 ? "🔥 " : ""}
-              {currentQuestion + 1} / {state.questions.length}
-            </Badge>
+              <Badge
+                p={1}
+                rounded={"md"}
+                colorScheme={currentStreak >= 3 ? "orange" : "gray"}
+              >
+                {currentStreak >= 3 ? "🔥 " : ""}
+                {currentQuestion + 1} / {state.questions.length}
+              </Badge>
+            </Tooltip>
           </HStack>
         </CardHeader>
         <CardBody
