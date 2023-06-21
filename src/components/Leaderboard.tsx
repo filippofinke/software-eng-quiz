@@ -1,4 +1,11 @@
-import { Box, IconButton, Tooltip, Text, HStack } from "@chakra-ui/react";
+import {
+  Box,
+  IconButton,
+  Tooltip,
+  Text,
+  HStack,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { collection, getDocs, limit, orderBy, query } from "firebase/firestore";
 import { useState } from "react";
 import { GrTrophy } from "react-icons/gr";
@@ -7,6 +14,8 @@ import Rank from "./Rank";
 let lastUpdated: number | null = null;
 
 export default function Leaderboard() {
+  const color = useColorModeValue("invert(0)", "invert(100)");
+
   let [leaderboard, setLeaderboard] = useState<
     {
       displayName: string;
@@ -65,7 +74,7 @@ export default function Leaderboard() {
     >
       <IconButton
         variant="ghost"
-        icon={<GrTrophy />}
+        icon={<GrTrophy filter={color} />}
         aria-label={"Leaderboard"}
       />
     </Tooltip>
